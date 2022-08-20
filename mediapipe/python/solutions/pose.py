@@ -142,7 +142,9 @@ class Pose(SolutionBase):
         pose landmarks to be considered tracked successfully. See details in
         https://solutions.mediapipe.dev/pose#min_tracking_confidence.
     """
-    _download_oss_pose_landmark_model(model_complexity)
+
+    ### disabling download of models so it will work in a cloud function. Models already present.
+    # _download_oss_pose_landmark_model(model_complexity)
     super().__init__(
         binary_graph_path=_BINARYPB_FILE_PATH,
         side_inputs={
